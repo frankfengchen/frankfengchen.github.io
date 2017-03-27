@@ -3,6 +3,25 @@
 <body>
 
 <h1>JavaScript Playground</h1>
+
+<h2>Light on/off</h1>
+
+<p>In this case JavaScript changes the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('state').innerHTML ='light is on'">Turn on the light(text)</button>
+
+<p id="state"> light is off </p>
+
+<button onclick="document.getElementById('state').innerHTML ='light is off'">Turn off the light(text)</button>
+<div> </div>
+
+<button onclick="document.getElementById('myImage').src ='pic_bulbon.gif';document.getElementById('state').innerHTML = 'Light is ON'"">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif';document.getElementById('state').innerHTML = 'Light is OFF'">Turn off the light</button>
+
+<h2>Module Pattern</h2>
 <script src="6-modulePattern.js"> </script>
 <button type="button"
 onclick="Module.thirdMethod()">
