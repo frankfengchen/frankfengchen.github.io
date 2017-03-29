@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body  onload="createGreeting(); displayCookie()">
 
 <h1>JavaScript Playground</h1>
+<script src="cookiefunc.js"></script>
+<h2>Cookies</h1>
+<p id="greeting"></p>
+<p>Click the button to create/modify a cookie; all existing cookies are listed below</p>
+<form>
+ <input type="text" id="cookiename" name="Cookie name" value="username">
+ <input type="text" id="cookievalue" name="Cookie value" value="xyz">
+ <input type="button" onclick="setCookie()" value="Add Cookie">
+ <input type="button" onclick="eraseCookie()" value="Delete Cookie">
+ <input type="button" onclick="eraseAllCookie()" value="Delete All Cookie">
+</form>
+
+<p id="allcookies"></p>
+
 
 <h2>Light on/off</h1>
 
@@ -22,12 +36,15 @@
 <button onclick="document.getElementById('myImage').src='pic_bulboff.gif';document.getElementById('state').innerHTML = 'Light is OFF'">Turn off the light</button>
 
 <h2>Module Pattern</h2>
-<script src="6-modulePattern.js"> </script>
+
 <button type="button"
 onclick="Module.thirdMethod()">
 Click me</button>
 
 <p id="demo"></p>
+
+
+<script src="6-modulePattern.js"> </script>
 
 </body>
 </html> 
