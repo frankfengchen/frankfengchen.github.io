@@ -5,7 +5,7 @@
 //Add a new cookie
 function setCookie() {
     var d = new Date();
-    var exdays = 1; //default expiration period is one day
+    var exdays = 10; //default expiration period is ten days
     var cname = document.getElementById("cookiename").value;
     var cvalue = document.getElementById("cookievalue").value;
 
@@ -19,15 +19,18 @@ function setCookie() {
 
 //Find a cookie with the name "cname"
 function getCookie(cname) {
+    //If cname value is not specified, then we cannot find the cookie
+    if (typeof cname === 'undefined') { return "";}
+
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) === ' ') {
             c = c.substring(1);
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
             return c.substring(name.length, c.length);
         }
     }
@@ -59,10 +62,10 @@ function createGreeting() {
 }
 
 //Erase a cookie
-function eraseCookie(cname = "") {
+function eraseCookie(cname) { //Do not use ES6 default parameter syntax, IE doesn't support it
     //Get the cookie name from form input if it's not specified
-    if(cname == "") 
-        cname = document.getElementById("cookiename").value;
+    cname = typeof cname !== 'undefined' ? cname : document.getElementById("cookiename").value;
+    
     document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
     createGreeting(); //update greetings
