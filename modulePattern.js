@@ -2,6 +2,7 @@ var Module = (function () {
 
   var privateMethod = function () {
     // private
+    document.getElementById('demo').innerHTML = "This is a private method";
   };
 
   var someMethod = function () {
@@ -12,6 +13,8 @@ var Module = (function () {
   var anotherMethod = function () {
     // public
     document.getElementById('demo').innerHTML = "anotherMethod";
+    //Call private method
+    privateMethod();
   };
   
   return {
@@ -21,6 +24,7 @@ var Module = (function () {
 
 })();
 
+//Add another method to Module; note this method cannot access private method of Module
 Module.thirdMethod = function () {
 	// public
     //document.getElementById('demo').innerHTML = "thirdMethod";

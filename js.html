@@ -24,8 +24,18 @@
 <button type="button" onclick="displayLottery()">Try my luck</button>
 <p id="lottery" style="display:inline"></p>
 
+<h2>4. Form Validation and Submition</h2>
+<p>A form with two required fields (names) and one optional (zip); <br>
+   submitted to a dummy server using "POST" method.</p>
+<form name="dummyForm" action="https://www.w3schools.com/action_page_post.php"
+onsubmit="return validateForm()" method="post" target="_blank">
+First Name:<input type="text" name="fname" required>
+Last Name: <input type="text" name="lname" required>
+Zip (5 digit):<input type="text" name="zip">
+<input type="submit" value="Submit">
+</form>
 
-<h2>4. Light on/off</h2>
+<h2>5. Light on/off</h2>
 
 <p>In this case JavaScript changes the src (source) attribute of an image.</p>
 
@@ -42,9 +52,11 @@
 
 <button onclick="document.getElementById('myImage').src='pic_bulboff.gif';document.getElementById('state').innerHTML = 'Light is OFF'">Turn off the light</button>
 
-<h2>5. Module Pattern</h2>
+<h2>6. Module Pattern</h2>
 <p>Use Module Pattern to hide private members and only expose public methos. <br>
-   This can help to reduce the use of global variables.</p>
+   This can help to reduce the use of global variables. <br>
+   A private method is accessed through a public method.
+   </p>
 <button type="button"
 onclick="Module.thirdMethod()">
 Click me</button>
@@ -53,7 +65,8 @@ Click me</button>
 
 <script src="cookiefunc.js"></script>
 <script src="lottery.js"></script>
-<script src="6-modulePattern.js"> </script>
+<script src="formvalidation.js"></script>
+<script src="modulePattern.js"> </script>
 
 </body>
 </html> 
