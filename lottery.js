@@ -1,6 +1,7 @@
 //Generate random lottery numbers in an animated fashion (never stop unless manually stopped)
 var foreverLotteryStatus = false; //Global variable
 var foreverInterval; //Global varible
+
 function foreverLottery() {
 	var interval = 1000; //Refresh interval
 
@@ -13,8 +14,6 @@ function foreverLottery() {
 		document.getElementById("lotteryForeverBtn").innerHTML = "Resume Auto";
 		foreverLotteryStatus = false;
 	}
-	
-
 }
 
 //Wrapper function to generateLottery() so we can update the right element
@@ -27,6 +26,8 @@ function generateLotteryForever() {
 function displayLottery() {
 	var timeout = 100; //start with 100ms
 	var step = 100;
+	var elem = document.getElementById("lottery");
+	elem.style.color = "black";
 	
 	do {
 		setTimeout(generateLottery, timeout);
@@ -35,7 +36,7 @@ function displayLottery() {
 	} while(timeout < 2000);
 
 	//Format the final result
-	setTimeout(function(){document.getElementById("lottery").style.color = "green";}, 2000);
+	setTimeout(function(){elem.style.color = "green";}, 2000);
 }
 
 
@@ -52,7 +53,6 @@ function generateLottery(elem) {
 	lottery.push(generateNum(35));
 
 	elem.innerHTML = lottery;
-
 }
 
 //Generate a random number that ranges from 1 to numDap
