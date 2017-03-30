@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<body  onload="createGreeting(); displayCookie()">
+<body  onload="createGreeting(); displayCookie(); foreverLottery()">
 
 <h1>JavaScript Playground</h1>
 
-<h2>Cookies</h2>
+<h2>1. Cookies</h2>
 <p id="greeting"></p>
 <p>Click the button to create/modify a cookie; all existing cookies are listed below</p>
 <form>
- <input type="text" id="cookiename" name="Cookie name" value="username">
- <input type="text" id="cookievalue" name="Cookie value" value="xyz">
+ Cookie Name: <input type="text" id="cookiename" name="Cookie name" value="username"><br>
+ Cookie Value:<input type="text" id="cookievalue" name="Cookie value" value="xyz"><br>
  <input type="button" onclick="setCookie()" value="Add Cookie">
  <input type="button" onclick="eraseCookie()" value="Delete Cookie">
  <input type="button" onclick="eraseAllCookie()" value="Delete All Cookie">
@@ -17,8 +17,15 @@
 
 <p id="allcookies"></p>
 
-<br>
-<h2>Light on/off</h2>
+<h2>3. Lucky Numbers</h2>
+<p>Use random numbers to compose lottery numbers (animation by setTimer/setInterval)</p>
+<button type="button" id="lotteryForeverBtn" onclick="foreverLottery()">Pause auto</button>
+<p id="lotteryForever" style="display:inline; color:blue"></p><br><br>
+<button type="button" onclick="displayLottery()">Try my luck</button>
+<p id="lottery" style="display:inline"></p>
+
+
+<h2>4. Light on/off</h2>
 
 <p>In this case JavaScript changes the src (source) attribute of an image.</p>
 
@@ -35,8 +42,9 @@
 
 <button onclick="document.getElementById('myImage').src='pic_bulboff.gif';document.getElementById('state').innerHTML = 'Light is OFF'">Turn off the light</button>
 
-<h2>Module Pattern</h2>
-
+<h2>5. Module Pattern</h2>
+<p>Use Module Pattern to hide private members and only expose public methos. <br>
+   This can help to reduce the use of global variables.</p>
 <button type="button"
 onclick="Module.thirdMethod()">
 Click me</button>
@@ -44,6 +52,7 @@ Click me</button>
 <p id="demo"></p>
 
 <script src="cookiefunc.js"></script>
+<script src="lottery.js"></script>
 <script src="6-modulePattern.js"> </script>
 
 </body>
