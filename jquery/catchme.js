@@ -23,6 +23,7 @@ $(document).ready(function(){
 	    	objId = $(this).attr("id");
 	    	//alert("objId: " + objId);
 	    	randomMove($(this));
+	    	$("#result").html("<b>Your time:</b> ");
     	}
     });
 
@@ -94,7 +95,6 @@ function randomMove(objToMove) {
 		outmsg+= $(nth).attr("src") + "<br>";
 
 	}
-	//$("#dbg1").html(outmsg);
 }
 
 		
